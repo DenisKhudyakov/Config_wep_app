@@ -1,0 +1,13 @@
+[Unit]
+Description=Single_Page_Application daemon
+After=network.target
+
+[Service]
+User=deniskhudyakov
+Group=www-data
+WorkingDirectory=/var/www/html/Single_Page_Application
+Environment="PATH=/home/deniskhudyakov/.cache/pypoetry/virtualenvs/single_page_application-01G1D8OF-py3.12/bin"
+ExecStart=/home/deniskhudyakov/.cache/pypoetry/virtualenvs/single_page_application-01G1D8OF-py3.12/bin/gunicorn --access-logfile - --workers 3 --bind unix:/var/www/html/Single_Page_Application/Singl>
+
+[Install]
+WantedBy=multi-user.target
